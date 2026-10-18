@@ -13,6 +13,7 @@ Intel Physical AI Studio와 SO-ARM101 로봇 팔로 "노트북에서 모으고, 
 | 13일차 | M5 | 101–104 | 이미테이션 러닝 — ACT 학습(B70), 실물 로봇 추론·평가 | [06](docs/06-act-train-and-inference.md) |
 | 14–15일차 | M6 | 105–120 | 최종 프로젝트 — 기획, 인식 계층, 판단·행동 계층, 발표 | [07](docs/07-final-project.md) |
 
+- [강사 소개](docs/instructor.md)
 - 강사용: [00 운영 메모](docs/00-instructor-runbook.md) — 당일 시간표, 사전 점검, 수준 차이 대응
 - 공통: [08 문제 해결 · FAQ](docs/08-troubleshooting-faq.md) — CUDA와 XPU 차이 등 자주 받는 질문 포함
 - 배포용: [학생용 명령어 카드](handouts/student-command-card.md)

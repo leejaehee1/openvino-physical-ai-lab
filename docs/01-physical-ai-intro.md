@@ -1,5 +1,7 @@
 # 01. Physical AI 개관 (89차시)
 
+> 시작 전 [강사 소개](instructor.md) (2분)
+
 ## 학습 목표
 
 - Physical AI가 지금까지 배운 비전·언어 AI와 무엇이 다른지 설명할 수 있다.
