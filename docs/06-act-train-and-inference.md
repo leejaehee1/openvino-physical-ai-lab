@@ -24,6 +24,8 @@
 
 **ACT = Action Chunking with Transformers** (Zhao et al., 2023, ALOHA 프로젝트)
 
+> ACT의 설정값(`chunk_size` 등)과 다른 정책(SmolVLA·Pi0.5 등)과의 비교는 [13 로봇 정책 한눈에 보기](13-policies.md)에 정리했습니다.
+
 ```text
  카메라 이미지 ──▶ ResNet (이미지 특징 추출) ─┐
                                               ├─▶ Transformer 인코더 ─▶ Transformer 디코더 ─▶ 앞으로 k스텝의 관절 목표값
