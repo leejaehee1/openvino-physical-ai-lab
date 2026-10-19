@@ -114,7 +114,7 @@ Docker 이미지 태그 기본값이 `IMAGE_TAG=main`이라 **pull한 시각에 
 
 | 항목 | 확인 내용 | 결과 |
 |---|---|---|
-| 병합 명령의 로컬 경로 | Export zip을 푼 폴더를 `lerobot-edit-dataset` 병합 대상으로 지정하는 방법 ([06](06-act-train-and-inference.md)) | |
+| 병합 명령의 로컬 경로 | Export zip을 푼 폴더를 `lerobot-edit-dataset` 병합 대상으로 지정하는 방법 ([06](06-act-train-and-inference.md)) | LeRobot 0.6.1에서 `--operation.roots` 방식으로 검증 완료. 실제 Studio zip 구조와 컨테이너 LeRobot 버전만 확인 |
 | 노트북용 runtime.yaml | runtime-config의 로봇·카메라 부분을 runtime export에 옮겨도 검증 통과하는지 | |
 | `physicalai run` 실행 환경 | 학생 노트북 Studio 컨테이너 안에서 명령 제공·장치 접근 되는지 | |
 | B70 학습 시간 | 병합 데이터(학생 수 × 10)로 ACT 학습 소요 시간 | ( 분) |

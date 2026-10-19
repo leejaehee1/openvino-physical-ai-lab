@@ -62,25 +62,29 @@
 
 이 저장소의 [`scripts/merge_class_datasets.sh`](../scripts/merge_class_datasets.sh)가 아래를 한 번에 합니다.
 
-1. zip을 `~/.cache/huggingface/lerobot/local/<학생번호>/`로 풀기
+1. zip을 `~/class/src/<학생번호>/`로 풀기
 2. [`check_datasets.py`](../scripts/check_datasets.py)로 학생별 `meta/info.json`의 fps · 카메라 키 · 해상도 · robot_type 비교 → 다른 데이터는 알려 주고 중단
-3. `lerobot-edit-dataset` 병합 (에피소드 번호 재부여, 메타·통계 재계산)
-4. 결과를 `class_merged.zip`으로 압축
+3. `lerobot-edit-dataset` 병합 (에피소드 번호 재부여, 메타·통계 재계산) → `~/class/merged/class_merged/`
+4. 결과를 `~/class/merged/class_merged.zip`으로 압축
 
 ```bash
 ./scripts/merge_class_datasets.sh ~/class/inbox class_merged
 ```
 
-스크립트가 내부에서 실행하는 병합 명령:
+스크립트가 내부에서 실행하는 병합 명령 (로컬 폴더는 `--operation.roots`로 지정, 결과는 `--new_repo_id`·`--new_root`):
 
 ```bash
 lerobot-edit-dataset \
-  --repo_id local/class_merged \
+  --new_repo_id local/class_merged \
+  --new_root ~/class/merged/class_merged \
   --operation.type merge \
-  --operation.repo_ids "['local/s01', 'local/s02', 'local/s03']"
+  --operation.repo_ids "['s01', 's02', 's03']" \
+  --operation.roots "['/home/me/class/src/s01', '/home/me/class/src/s02', '/home/me/class/src/s03']"
 ```
 
-> ⚠️ **리허설 필수.** 로컬 폴더를 병합 대상으로 지정하는 방식은 실제 Export zip으로 아직 검증되지 않았습니다. lerobot이 Studio 컨테이너 안에 있는지, 별도 venv(`pip install lerobot==0.6.0`)가 필요한지도 현장에서 확인합니다.
+> ✅ **검증됨 (LeRobot 0.6.1)**: LeRobot으로 만든 v3 데이터셋 3개를 zip으로 묶어 이 스크립트로 병합했고, 에피소드 번호·영상 구간이 다시 매겨지고 학습용 로딩까지 되는 것을 확인했습니다.
+> ⚠️ 서큘러스 가이드의 `--repo_id local/class_merged` 형태는 현재 LeRobot에서 결과 이름 옵션이 아닙니다(`--new_repo_id`가 맞음).
+> 남은 확인: 실제 **Studio Export zip** 의 폴더 구조, 그리고 B70 Studio 컨테이너 안의 LeRobot 버전(`lerobot-edit-dataset --help`로 옵션 확인). 컨테이너에 없으면 별도 venv에 `pip install "lerobot[dataset]"`.
 
 ### 3-3. Studio로 가져와 학습
 
@@ -169,6 +173,8 @@ physicalai run --config runtime.yaml --run.duration_s=10
 - 실패 양상: 엉뚱한 곳으로 감 / 근처까지 가서 헛집음 / 집었는데 떨어뜨림 → 각각 무엇이 부족했을까?
 
 ## 더 해보기 (경험자) — OpenVINO 디바이스 비교
+
+> 로봇 없이 바로 재 보려면 [`scripts/bench_policy.py`](../scripts/bench_policy.py)를 씁니다. Python으로 제어 루프·텔레오퍼레이션·로봇 공유까지 다루는 예제는 [12 physicalai 예제 모음](12-physicalai-examples.md)에 있습니다.
 
 같은 모델을 `runtime.yaml`의 device만 바꿔 실행하며 반응 속도를 비교합니다. M2에서 했던 CPU·GPU·NPU 비교를 **로봇 정책** 으로 확장하는 실습입니다.
 

@@ -34,13 +34,17 @@ def load(root: Path):
     return info, df.sort_values(["episode_index", "frame_index"])
 
 
-def robust_outlier(values: np.ndarray, k: float = 3.0) -> np.ndarray:
+def robust_outlier(values: np.ndarray, floor: float, k: float = 3.0) -> np.ndarray:
     """중앙값에서 MAD 기준 k배 이상 벗어난 값을 True로 표시한다."""
     med = np.median(values)
     mad = np.median(np.abs(values - med))
-    # 에피소드들이 거의 같으면 MAD가 0에 가까워 사소한 차이도 튀어 보이므로 하한을 둔다
-    mad = max(mad, 0.05 * abs(med), 1e-9)
+    # 에피소드들이 거의 같으면 MAD가 0에 가까워 사소한 차이도 튀어 보이므로 지표별 최소 폭을 둔다
+    mad = max(mad, 0.05 * abs(med), floor)
     return np.abs(values - med) / (1.4826 * mad) > k
+
+
+# 지표별 최소 폭: 이보다 작은 차이는 불량으로 보지 않는다
+FLOORS = {"길이(초)": 1.0, "시작 편차": 0.1, "정지 비율(%)": 5.0, "추종 오차": 1e-6}
 
 
 def main() -> int:
@@ -74,8 +78,8 @@ def main() -> int:
 
     res = pd.DataFrame(rows)
     flags = []
-    for col in ("길이(초)", "시작 편차", "정지 비율(%)", "추종 오차"):
-        out = robust_outlier(res[col].to_numpy())
+    for col, floor in FLOORS.items():
+        out = robust_outlier(res[col].to_numpy(), floor)
         flags.append(np.where(out, col.split("(")[0], ""))
     res["확인"] = [", ".join(f for f in fs if f) for fs in zip(*flags)]
 
