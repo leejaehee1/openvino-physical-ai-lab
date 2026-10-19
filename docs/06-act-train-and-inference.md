@@ -16,9 +16,9 @@
 | ④ 학습 | B70 PC | 강사 | GUI | Import dataset → Train model → OpenVINO 내보내기 |
 | ⑤ 추론 | 학생 노트북 | 학생 | CLI 1줄 | Download runtime export → `physicalai run` |
 
-③과 ⑤만 명령어인 이유: Studio의 학습은 **데이터셋 하나만** 받고 병합 메뉴가 없으며, 다른 PC에서 만든 모델을 Studio에 ** 다시 넣는 메뉴가 없습니다**. 대신 Studio가 공식 제공하는 runtime export를 `physicalai run`으로 실행하면 Studio 화면 밖에서 로봇 추론이 됩니다.
+③과 ⑤만 명령어인 이유: Studio의 학습은 **데이터셋 하나만** 받고 병합 메뉴가 없으며, 다른 PC에서 만든 모델을 Studio에 **다시 넣는 메뉴가 없습니다**. 대신 Studio가 공식 제공하는 runtime export를 `physicalai run`으로 실행하면 Studio 화면 밖에서 로봇 추론이 됩니다.
 
-> Studio에는 노트북에서 학습 버튼을 누르면 GPU 서버에서 학습하는 **원격 학습** 기능도 있지만, GPU 1장에 노트북 수십 대의 학습이 줄을 서게 됩니다. 이 수업은 ** 반 전체 데이터로 한 번 학습해서 나눠 주는** 방식이라 원격 학습을 쓰지 않습니다.
+> Studio에는 노트북에서 학습 버튼을 누르면 GPU 서버에서 학습하는 **원격 학습** 기능도 있지만, GPU 1장에 노트북 수십 대의 학습이 줄을 서게 됩니다. 이 수업은 **반 전체 데이터로 한 번 학습해서 나눠 주는** 방식이라 원격 학습을 쓰지 않습니다.
 
 ## 2. ACT 원리 (학습 대기 시간에 설명)
 
@@ -108,7 +108,7 @@ lerobot-edit-dataset \
 | 메뉴 | 내용 | 이 수업에서 |
 |---|---|---|
 | Download model | 체크포인트 + 내보낸 모델 전체 | 보관용 (노트북 Studio에 넣는 메뉴가 없음) |
-| **Download runtime export** | OpenVINO 모델 + `runtime.yaml` + README | ** 이것을 사용** |
+| **Download runtime export** | OpenVINO 모델 + `runtime.yaml` + README | **이것을 사용** |
 
 ## 5. 학생 노트북 — 추론
 

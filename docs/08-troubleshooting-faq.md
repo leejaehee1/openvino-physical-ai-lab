@@ -84,7 +84,7 @@ PyTorch는 2.5 버전부터 인텔 GPU(XPU)를 공식 지원합니다. 별도 �
 
 ### B70은 어떤 GPU인가요?
 
-인텔 **Arc Pro** 계열 워크스테이션용 외장 GPU입니다. 노트북 iGPU와 같은 Xe 아키텍처 계열이라 ** 같은 XPU 소프트웨어 스택**(드라이버, PyTorch XPU, OpenVINO)으로 동작합니다. 정확한 사양은 현장 PC에서 확인합니다.
+인텔 **Arc Pro** 계열 워크스테이션용 외장 GPU입니다. 노트북 iGPU와 같은 Xe 아키텍처 계열이라 **같은 XPU 소프트웨어 스택**(드라이버, PyTorch XPU, OpenVINO)으로 동작합니다. 정확한 사양은 현장 PC에서 확인합니다.
 
 ```bash
 ls /dev/dri/                # card*, renderD* 장치
@@ -93,7 +93,7 @@ clinfo -l                   # OpenCL로 보이는 장치 목록 (clinfo 설치 �
 
 ### Physical AI Studio랑 LeRobot은 무슨 관계인가요?
 
-- **LeRobot** (Hugging Face): 로봇 학습 라이브러리이자 ** 데이터셋 형식의 사실상 표준**.
+- **LeRobot** (Hugging Face): 로봇 학습 라이브러리이자 **데이터셋 형식의 사실상 표준**.
 - **Physical AI Studio** (Intel): LeRobot 형식을 그대로 쓰면서, 설정·녹화·학습·내보내기·추론을 **GUI로 묶고** OpenVINO 배포를 붙인 플랫폼. LeRobot 정책도 쓸 수 있습니다.
 - 그래서 Studio에서 녹화한 데이터를 LeRobot으로 학습하거나, 반대로 가져오는 것이 가능합니다.
 
