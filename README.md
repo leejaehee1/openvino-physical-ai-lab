@@ -12,7 +12,7 @@ Intel Physical AI Studio와 SO-ARM101 로봇 팔로 "노트북에서 모으고, 
 | 13일차 | M5 | 97–100 | 데이터 수집 — 에피소드 녹화, 품질 관리, LeRobot 데이터셋 | [05](docs/05-data-collection.md) · [05a 이론](docs/05a-data-collection-theory.md) |
 | 13일차 | M5 | 101–104 | 이미테이션 러닝 — ACT 학습(B70), 실물 로봇 추론·평가 | [06](docs/06-act-train-and-inference.md) |
 | 14–15일차 | M6 | 105–120 | 최종 프로젝트 — 기획, 인식 계층, 판단·행동 계층, 발표 | [07a 도입](docs/07a-agent-view-for-m6.md) · [07](docs/07-final-project.md) |
-| 보충 | — | 하루 추가 시 | 이론 보강 — LLM은 어떻게 만들어지나, 데이터 수집 이론 | [09](docs/09-how-llms-work.md) · [05a](docs/05a-data-collection-theory.md) |
+| 보충 | — | 하루 추가 시 | 이론 보강 — LLM은 어떻게 만들어지나, MNIST에서 ResNet까지, 데이터 수집 이론 | [09](docs/09-how-llms-work.md) · [10](docs/10-cnn-history.md) · [05a](docs/05a-data-collection-theory.md) |
 
 ## 강의 슬라이드
 
