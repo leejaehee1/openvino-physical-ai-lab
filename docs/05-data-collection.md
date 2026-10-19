@@ -1,5 +1,7 @@
 # 05. 데이터 수집 (97–100차시)
 
+> 왜 이렇게 녹화해야 하는지(분포 이동, 다봉성, 커버리지 등)는 [05a 데이터 수집 이론](05a-data-collection-theory.md)에 자세히 정리했습니다.
+
 ## 학습 목표
 
 - 좋은 시연 에피소드의 조건을 알고 1인 10개를 녹화한다.
@@ -99,6 +101,12 @@ s05_pick/
 → 강사가 B70 PC에서 **병합 명령** 으로 번호를 다시 매기고 메타·통계를 새로 계산합니다. ([06 교안](06-act-train-and-inference.md))
 
 ## 더 해보기 (경험자)
+
+에피소드 품질을 숫자로 한 번에 보려면 [`scripts/analyze_episodes.py`](../scripts/analyze_episodes.py)를 실행합니다 (길이, 시작 자세 편차, 정지 비율, 추종 오차). 설명은 [05a 7절](05a-data-collection-theory.md).
+
+```bash
+python3 scripts/analyze_episodes.py ~/peek
+```
 
 내보낸 zip을 풀어 직접 열어 봅니다.
 

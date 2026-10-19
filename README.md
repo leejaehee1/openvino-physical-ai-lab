@@ -9,7 +9,7 @@ Intel Physical AI Studio와 SO-ARM101 로봇 팔로 "노트북에서 모으고, 
 |---|---|---|---|---|
 | 12일차 | M5 | 89–92 | 로봇 환경 구축 — Physical AI 개념, SO-ARM101 구조, 서보 ID, 캘리브레이션 | [01](docs/01-physical-ai-intro.md) · [02](docs/02-docker-and-studio-install.md) · [03](docs/03-so101-setup.md) |
 | 12일차 | M5 | 93–96 | Studio 설정 — 환경 구성, 카메라 연동, 리더-팔로워 텔레오퍼레이션 | [04](docs/04-studio-environment-teleop.md) |
-| 13일차 | M5 | 97–100 | 데이터 수집 — 에피소드 녹화, 품질 관리, LeRobot 데이터셋 | [05](docs/05-data-collection.md) |
+| 13일차 | M5 | 97–100 | 데이터 수집 — 에피소드 녹화, 품질 관리, LeRobot 데이터셋 | [05](docs/05-data-collection.md) · [05a 이론](docs/05a-data-collection-theory.md) |
 | 13일차 | M5 | 101–104 | 이미테이션 러닝 — ACT 학습(B70), 실물 로봇 추론·평가 | [06](docs/06-act-train-and-inference.md) |
 | 14–15일차 | M6 | 105–120 | 최종 프로젝트 — 기획, 인식 계층, 판단·행동 계층, 발표 | [07](docs/07-final-project.md) |
 
