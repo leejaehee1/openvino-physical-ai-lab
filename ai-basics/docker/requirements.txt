@@ -1,0 +1,10 @@
+jupyterlab>=4.2
+numpy>=1.26
+pandas>=2.2
+matplotlib>=3.8
+seaborn>=0.13
+scikit-learn>=1.5
+scikit-image>=0.24
+opencv-python-headless>=4.10
+tensorflow>=2.16,<3
+tensorboard>=2.16

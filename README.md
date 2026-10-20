@@ -15,6 +15,11 @@ Intel Physical AI Studio와 SO-ARM101 로봇 팔로 "노트북에서 모으고, 
 | 보충 | — | 하루 추가 시 | 이론 보강 — LLM은 어떻게 만들어지나, MNIST에서 ResNet까지, 데이터 수집 이론 | [09](docs/09-how-llms-work.md) · [10](docs/10-cnn-history.md) · [05a](docs/05a-data-collection-theory.md) |
 | 심화 | — | 경험자 · M6 | LeRobot v3 데이터셋 구조와 에피소드 설계, OpenVINO physicalai 예제 11개, 로봇 정책(ACT·VLA) 비교 | [11](docs/11-lerobot-dataset-v3.md) · [12](docs/12-physicalai-examples.md) · [13](docs/13-policies.md) |
 
+## 인공지능 기초 실습 과정 (별도 과정)
+
+픽셀 → 필터·합성곱 → 퍼셉트론 → 다층 신경망·역전파 → TensorFlow·TensorBoard → MNIST·CNN → 모델 평가까지 15단원 Jupyter 실습.
+Docker Compose로 JupyterLab과 TensorBoard를 함께 띄우며, 진도에 따라 여러 날로 나눠 진행합니다. → [ai-basics/](ai-basics/README.md)
+
 ## 강의 슬라이드
 
 - [12일차. 로봇 환경 구축과 Physical AI Studio 설정 (89–96차시)](https://claude.ai/artifact/NE1y1bGyrRK1a4UmWUDfct)

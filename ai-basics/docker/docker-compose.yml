@@ -1,0 +1,30 @@
+# 사용법 (ai-basics/docker/ 에서):
+#   docker compose up -d --build
+#   JupyterLab   → http://localhost:8888
+#   TensorBoard  → http://localhost:6006
+#   종료          docker compose down
+#
+# ⚠️ 토큰 없이 열리는 설정입니다. 교육생 본인 노트북(localhost)에서만 쓰고, 공유 서버에 띄울 때는 토큰을 설정하세요.
+services:
+  jupyter:
+    build: .
+    image: ai-basics-lab:latest
+    container_name: ai-basics-jupyter
+    ports:
+      - "127.0.0.1:8888:8888"
+    volumes:
+      - ../notebooks:/home/student/work/notebooks
+      - ../data:/home/student/work/data
+      - ../logs:/home/student/work/logs
+      - ../models:/home/student/work/models
+
+  tensorboard:
+    image: ai-basics-lab:latest
+    container_name: ai-basics-tensorboard
+    depends_on:
+      - jupyter
+    command: ["tensorboard", "--logdir", "/home/student/work/logs", "--bind_all", "--port", "6006"]
+    ports:
+      - "127.0.0.1:6006:6006"
+    volumes:
+      - ../logs:/home/student/work/logs:ro
